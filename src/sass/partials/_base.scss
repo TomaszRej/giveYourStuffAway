@@ -22,6 +22,15 @@ button {
   }
 }
 
+input[type='text'],input[type='email'],textarea{
+    border:none;
+  background: transparent none;
+  box-shadow: none;
+  &:focus{
+    outline: none;
+  }
+}
+
 
 
 .container{
