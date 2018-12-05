@@ -1,0 +1,33 @@
+#info-section{
+  background-color: $primaryColor;
+  .info-items {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 1rem;
+    .info-item {
+      //width: 250px;
+      div {
+        font-size: 3rem;
+        margin: 1rem;
+      }
+      h3 {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin: 1rem;
+      }
+      p {
+        margin: 1rem;
+
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 400px){
+  p{
+     width: 300px;
+  }
+}

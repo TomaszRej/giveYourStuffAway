@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+body{
+  font-family: $open-sans;
+  background-color: $primaryBgColor;
+}
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  &:focus{
+    outline: none;
+  }
+}
+
+
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}

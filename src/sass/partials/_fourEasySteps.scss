@@ -1,0 +1,88 @@
+#fourEasySteps-section {
+  background-color: $primaryBgColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+
+
+  header {
+    font-size:2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .fourEasySteps-decoration {
+    background-image: url("./images/decoration.png");
+    background-repeat: no-repeat;
+    margin-bottom: 1rem;
+    width:253px;
+    height: 33px;
+  }
+  .steps {
+    background-color: $secondaryBgColor;
+    padding: 2rem;
+    //width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    .step {
+      margin: 1rem;
+      text-align: center;
+      position: relative;
+      i{
+        font-size: 3rem;
+        color:gray;
+      }
+      .fas.fa-binoculars{
+        margin-top: -20px;
+        position: absolute;
+        top: 20px;
+        right: 50px;
+      }
+
+      h5{
+        font-weight: normal;
+        margin-top: 2rem;
+        width: 150px;
+      }
+      .groupUnderBinoculars{
+        padding-top: 25px;
+      }
+      .line{
+        margin-top: -0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      p{
+        width: 150px;
+      }
+    }
+  }
+  button {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: $primaryBgColor;
+    border: 1px solid $primaryTextColor;
+    &:hover{
+     // background-color: $secondaryBgColor;
+     // color: $secondaryBgColor;
+      border-bottom: 1px solid black;
+      box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
+    }
+
+    &:focus{
+      border: 1px solid $primaryColor;
+      color: $primaryColor;
+    }
+  }
+
+}
+
+@media only screen and (min-width: 800px){
+  .steps{
+    width: 1000px;
+  }
+}
