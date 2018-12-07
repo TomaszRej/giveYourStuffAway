@@ -1,6 +1,7 @@
 #header-section{
 
   header{
+    //position: fixed;
     .login-section{
       text-align:right;
       margin:1rem;
@@ -13,9 +14,41 @@
             border: 1px solid $primaryColor;
           }
         }
+      span.greeting{
+        padding: 0.5rem;
+        &:hover{
+          border: 1px solid transparent;
+        }
+      }
+
+      .fas.fa-cogs{
+        position: relative;
+        opacity: 0.7;
+         .preferences{
+           background-color: $primaryBgColor;
+          position: absolute;
+           right: 20px;
+           border: 1px solid $primaryTextColor;
+           margin-top: 0.5rem;
+          li{
+            list-style: none;
+            font-weight: normal;
+            padding: 0.5rem 1rem;
+            &:hover{
+              opacity: 0.6;
+            }
+          }
+        }
+        &:hover{
+          //transform: scale(1.2);
+          opacity: 1;
+          transition: 0.3s;
+        }
+      }
     }
     nav{
       .mobileMenu{
+
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -142,8 +175,17 @@ border:1px solid $primaryTextColor;
     background-size: contain;
     width: 100vw;
     height: 100vh;
+    header {
+      .login-section{
+        margin-right: 10rem;
+      }
+      nav {
+        margin-left: 30rem;
+      }
+    }
     .mainIdea{
-      margin-left: 20rem;
+      margin-top: 10rem;
+      margin-left: 40rem;
     }
   }
 }

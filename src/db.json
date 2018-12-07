@@ -1,0 +1,127 @@
+{
+  "foundations": [
+    {
+      "name": "Dbam o zdrowie",
+      "mission": "Pomoc osobą znajdującym się w trudnej sytuacji życiowej",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "sprzęt AGD",
+        "zabawki",
+        "meble"
+      ]
+    },
+    {
+      "name": "Dla dzieci",
+      "mission": "Pomoc dzieciom z ubogich rodzin",
+      "whatCollect": [
+        "ubrania",
+        "zabawki",
+        "meble"
+      ]
+    },
+    {
+      "name": "Bez domu",
+      "mission": "Pomoc osobą nie posiadającym miejsca zamieszkania",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "ciepłe koce"
+      ]
+    },
+    {
+      "name": "Fundacja 4",
+      "mission": "Pomoc",
+      "whatCollect": [
+        "ubrania",
+        "zabawki",
+        "meble"
+      ]
+    },
+    {
+      "name": "Alkohol Free",
+      "mission": "Pomoc osobą uzależnionym od alkoholu",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "meble"
+      ]
+    }
+  ],
+  "organizations": [
+    {"name": "Polska Akcja Humanitarna",
+    "mission": "misja organizacji",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "meble"
+      ]
+    },
+    {"name": "Fundacja im. Stefana Batorego",
+      "mission": "misja organizacji",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "meble"
+      ]
+    },
+    {"name": "Komitet Ochrony Praw Dziecka ",
+      "mission": "misja organizacji",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "meble"
+      ]
+    },
+    {"name": "Fundacja MSP Komandor",
+      "mission": "misja organizacji",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "meble"
+      ]
+    },
+    {"name": "Polska Zielona Sieć ",
+      "mission": "misja organizacji",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "meble"
+      ]
+    },
+    {"name": "Fundacja Dzieci Niczyje ",
+      "mission": "misja organizacji",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "meble"
+      ]
+    },
+    {"name": "Fundacja Ośrodka KARTA",
+      "mission": "misja organizacji",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "meble"
+      ]
+    }
+  ],
+  "collections": [
+    {"name": "Zbiórka 1",
+      "mission": "cele zbiórki",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "meble"
+      ]
+    },
+    {"name": "Zbiórka 2",
+      "mission": "cele zbiórki",
+      "whatCollect": [
+        "ubrania",
+        "jedzenie",
+        "meble"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import {HashLink} from 'react-router-hash-link';
 
 class Header extends React.Component {
     constructor(props){
@@ -49,26 +51,26 @@ console.log('mobile');
     };
 
     render() {
-        console.log(this.state.isMobileView);
+        const {isMobileView, isMenuVisible} = this.state;
 
-        const hamburgerIcon = this.state.isMenuVisible ? <i onClick={this.handleHamburgerClick} className="fas fa-times"/> :  <i onClick={this.handleHamburgerClick} className="fas fa-bars"/>;
+
+        const hamburgerIcon = isMenuVisible ? <i onClick={this.handleHamburgerClick} className="fas fa-times"/> :  <i onClick={this.handleHamburgerClick} className="fas fa-bars"/>;
         return (
             <section id='header-section'>
-                <div style={{display: this.state.isMobileView ? 'none': 'block'}}>TEST</div>
                 <header>
                     <div className='login-section'>
                         <span>Zaloguj</span>
                         <span>Załóż konto</span>
                     </div>
                     <nav>
-                        <div style={{display: this.state.isMobileView ? 'flex' : 'none'}} className='mobileMenu'><i className="fas fa-tshirt"/> {hamburgerIcon}
+                        <div style={{display: isMobileView ? 'flex' : 'none'}} className='mobileMenu'><i className="fas fa-tshirt"/> {hamburgerIcon}
                         </div>
-                        <ul style={{display: this.state.isMenuVisible ? 'block' : 'none'}} className={this.state.isMenuVisible ? 'openMenu':'closeMenu'}>
-                            <li><a href='#header-section'>Start</a></li>
-                            <li><a href='#fourEasySteps-section'>O co chodzi?</a></li>
-                            <li><a href='#about-section'>O nas</a></li>
-                            <li><a href='#fundationsList-section'>Fundacje i organizacje</a></li>
-                            <li><a href='#footer-section'>Kontakt</a></li>
+                        <ul style={{display: isMenuVisible ? 'block' : 'none'}} className={isMenuVisible ? 'openMenu':'closeMenu'}>
+                            <li><HashLink to='#header-section'>Start</HashLink></li>
+                            <li><HashLink to='#fourEasySteps-section'>O co chodzi?</HashLink></li>
+                            <li><HashLink to='#about-section'>O nas</HashLink></li>
+                            <li><HashLink to='#foundationsList-section'>Fundacje i organizacje</HashLink></li>
+                            <li><HashLink to='#footer-section'>Kontakt</HashLink></li>
                         </ul>
 
                     </nav>
@@ -80,7 +82,8 @@ console.log('mobile');
                     </h1>
                     <div className='header-decoration'/>
                     <div className='mainButtons'>
-                        <button><span>Oddaj</span> <span>rzeczy</span></button>
+                        {/*<button><span>Oddaj</span> <span>rzeczy</span></button>*/}
+                        <Link to={'logged'}> <button><span>Oddaj</span> <span>rzeczy</span></button></Link>
                         <button><span>Zorganizuj</span> <span>zbiórkę</span>
                         </button>
                     </div>
