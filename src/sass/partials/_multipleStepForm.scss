@@ -1,0 +1,54 @@
+// button for all pages
+button {
+  text-transform: uppercase;
+  //width:150px;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  margin: 1rem;
+
+  background-color: $primaryBgColor;
+  border: 1px solid $primaryTextColor;
+  span{
+    display: block;
+  }
+  &:hover{
+    // background-color: $secondaryBgColor;
+    // color: $secondaryBgColor;
+    border-bottom: 1px solid black;
+    box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
+  }
+
+  &:focus{
+    border: 1px solid $primaryColor;
+    color: $primaryColor;
+  }
+
+
+}
+// button for all pages
+.firstPage{
+  display: flex;
+flex-direction: column;
+  align-items: center;
+  .firstPage-steps{
+
+  }
+  h3{
+
+  }
+  .firstPage-inputs{
+    label{
+      display: block;
+
+    }
+  }
+  button{
+
+  }
+}
+
+.bugs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

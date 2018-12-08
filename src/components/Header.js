@@ -88,9 +88,6 @@ console.log('mobile');
                         </button>
                     </div>
                 </div>
-
-
-
             </section>);
     }
 };

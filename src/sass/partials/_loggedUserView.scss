@@ -1,19 +1,18 @@
-#header-section{
-
+#headerLogged-section{
   header{
     //position: fixed;
     .login-section{
       text-align:right;
-      margin:1rem;
-        span{
-          padding: 0.5rem;
-          //background-color: $primaryBgColor;
-          border: 1px solid transparent;
-         // margin: 0.5rem;
-          &:hover{
-            border: 1px solid $primaryColor;
-          }
+      margin:0.5rem;
+      span{
+        padding: 0.5rem;
+        //background-color: $primaryBgColor;
+        border: 1px solid transparent;
+        // margin: 0.5rem;
+        &:hover{
+          border: 1px solid $primaryColor;
         }
+      }
       span.greeting{
         padding: 0.5rem;
         &:hover{
@@ -24,12 +23,12 @@
       .fas.fa-cogs{
         position: relative;
         opacity: 0.7;
-         .preferences{
-           background-color: $primaryBgColor;
+        .preferences{
+          background-color: $primaryBgColor;
           position: absolute;
-           right: 20px;
-           border: 1px solid $primaryTextColor;
-           margin-top: 0.5rem;
+          right: 20px;
+          border: 1px solid $primaryTextColor;
+          margin-top: 0.5rem;
           li{
             list-style: none;
             font-weight: normal;
@@ -61,7 +60,7 @@
 
         .fas.fa-tshirt{
 
-border:1px solid $primaryTextColor;
+          border:1px solid $primaryTextColor;
           border-radius: 50%;
           padding:0.5rem;
         }
@@ -90,14 +89,11 @@ border:1px solid $primaryTextColor;
 
       }
 
-
-
-
     }
   }
   .mainIdea{
 
-    margin: 3rem 0;
+   margin: 3rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,44 +110,56 @@ border:1px solid $primaryTextColor;
       height: 33px;
       width: 253px;
       margin-top: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
-    .mainButtons{
-      a{
-        color: $primaryTextColor;
-      }
-      button {
-        text-transform: uppercase;
-        width:150px;
-        font-size: 1rem;
-        padding: 0.5rem 2rem;
-        margin: 1rem;
+    h3{
+      font-weight: normal;
+      font-size: 1.5rem;
+    }
 
-        background-color: $primaryBgColor;
-        border: 1px solid $primaryTextColor;
+  }
+  .steps{
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .step{
+      //display: block;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $primaryTextColor;
+      transform: rotate(45deg);
+      //padding: 3rem;
+      width: 8rem;
+      height: 8rem;
+      position: relative;
+      margin-right: 1rem;
+      margin-bottom: 2rem;
+      .step-number{
+        transform: rotate(-45deg);
+        font-size:2rem;
+        position: absolute;
+        top:3px;
+        left: 15px;
+
+      }
+      .step-text{
+        transform: rotate(-45deg);
+        //width: 4rem;
+        text-align: center;
         span{
           display: block;
         }
-        &:hover{
-          // background-color: $secondaryBgColor;
-          // color: $secondaryBgColor;
-          border-bottom: 1px solid black;
-          box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
-        }
-
-        &:focus{
-          border: 1px solid $primaryColor;
-          color: $primaryColor;
-        }
-
-
       }
+
     }
   }
 }
 
 @media only screen and (min-width: 401px) {
-  #header-section{
+  #headerLogged-section{
 
     header{
       nav{
@@ -172,18 +180,19 @@ border:1px solid $primaryTextColor;
       }
     }
     .mainIdea{
-      margin-top: 4rem;
+      margin-top: 1rem;
     }
   }
 }
 @media only screen and (min-width: 1100px) {
-  #header-section {
-    background-image: url("./images/header_start_img.jpg");
+  #headerLogged-section {
+    background-image: url("./images/header_logged_img.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     width: 100vw;
-    height: 100vh;
+    height: 580px;
     header {
+      //height:25px;
       .login-section{
         margin-right: 10rem;
       }
@@ -192,9 +201,13 @@ border:1px solid $primaryTextColor;
       }
     }
     .mainIdea{
-      margin-top: 10rem;
-      margin-left: 40rem;
+      h1{
+        margin-top: 1rem;
+      }
+      margin-top: 2rem;
+      margin-left: 30rem;
     }
+
   }
 }
 //@keyframes open {

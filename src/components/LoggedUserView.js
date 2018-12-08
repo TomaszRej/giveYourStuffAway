@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import MultiStepForm from './MultipleStepForm';
 import Footer from './Footer';
 import {Link} from "react-router-dom";
 
@@ -56,6 +57,7 @@ class LoggedUserView extends React.Component {
         })
     };
 
+
     render() {
         const {isMobileView, isMenuVisible, isPreferencesOpen} = this.state;
         const {globalUserName} = this.props;
@@ -64,16 +66,17 @@ class LoggedUserView extends React.Component {
             <i onClick={this.handleHamburgerClick} className="fas fa-bars"/>;
         return (
 
-            <section id='header-section'>
+            <section id='headerLogged-section'>
                 <header>
                     <div className='login-section'>
                         <span className='greeting'>Witaj {globalUserName}</span>
-                        <i onClick={this.handleGearClick} style={{opacity:isPreferencesOpen? '1' : '0.7'}} className="fas fa-cogs">
-                            <ul style={{display: isPreferencesOpen ? 'block': 'none' }}  className='preferences'>
+                        <i onClick={this.handleGearClick} style={{opacity: isPreferencesOpen ? '1' : '0.7'}}
+                           className="fas fa-cogs">
+                            <ul style={{display: isPreferencesOpen ? 'block' : 'none'}} className='preferences'>
                                 <li>Profil</li>
                                 <li>Ustawienia</li>
                                 <li>Moje zbiórki</li>
-                                <li>Wyloguj</li>
+                                <li><Link to={'/'}>Wyloguj</Link></li>
                             </ul>
                         </i>
                     </div>
@@ -94,21 +97,49 @@ class LoggedUserView extends React.Component {
                 </header>
                 <div className='mainIdea'>
                     <h1>
-                        <span>Zacznij pomagać!</span>
-                        <span>Oddaj niechciane rzeczy w zaufane ręce</span>
+                        <span>Oddaj rzeczy, których już nie chcesz</span>
+                        <span>POTRZEBUJĄCYM</span>
                     </h1>
                     <div className='header-decoration'/>
-                    <div className='mainButtons'>
-                        {/*<button><span>Oddaj</span> <span>rzeczy</span></button>*/}
-                        <Link to={'logged'}>
-                            <button><span>Oddaj</span> <span>rzeczy</span></button>
-                        </Link>
-                        <button><span>Zorganizuj</span> <span>zbiórkę</span>
-                        </button>
+                    <h3>Wystarczą 4 proste kroki</h3>
+                    <div className='steps'>
+                        <div className='step'>
+                            <div className='step-number'>1</div>
+                            <div className='step-text'><span>Wybierz </span><span>rzeczy</span></div>
+                        </div>
+                        <div className='step'>
+                            <div className='step-number'>2</div>
+                            <div className='step-text'><span>Spakuj je</span><span>w worki</span></div>
+                        </div>
+                        <div className='step'>
+                            <div className='step-number'>3</div>
+                            <div className='step-text'><span>Wybierz </span><span>fundację</span></div>
+                        </div>
+                        <div className='step'>
+                            <div className='step-number'>4</div>
+                            <div className='step-text'><span>Zamów</span><span>kuriera</span></div>
+                        </div>
                     </div>
                 </div>
-
-
+                {/*<div className='steps'>*/}
+                    {/*<div className='step'>*/}
+                        {/*<div className='step-number'>1</div>*/}
+                        {/*<div className='step-text'><span>Wybierz </span><span>rzeczy</span></div>*/}
+                    {/*</div>*/}
+                    {/*<div className='step'>*/}
+                        {/*<div className='step-number'>1</div>*/}
+                        {/*<div className='step-text'><span>Wybierz </span><span>rzeczy</span></div>*/}
+                    {/*</div>*/}
+                    {/*<div className='step'>*/}
+                        {/*<div className='step-number'>1</div>*/}
+                        {/*<div className='step-text'><span>Wybierz </span><span>rzeczy</span></div>*/}
+                    {/*</div>*/}
+                    {/*<div className='step'>*/}
+                        {/*<div className='step-number'>1</div>*/}
+                        {/*<div className='step-text'><span>Wybierz </span><span>rzeczy</span></div>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+                <MultiStepForm/>
                 <Footer/>
             </section>);
     }
