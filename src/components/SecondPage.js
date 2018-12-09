@@ -25,22 +25,38 @@ class SecondPage extends React.Component {
             prevStep();
         }
     };
+    handleChange = (e) => {
+        const {handleChange} = this.props;
+        if (typeof handleChange === 'function') {
+            handleChange(e.target.name, e);
+        }
+
+    };
 
     render() {
-        const {bugs} = this.props;
+        const {bags} = this.props;
         return (
             <React.Fragment>
                 <ImportantInfo text={this.state.info}/>
-                <section className='bugs'>
+                <div className='picture-container'>
+                    <section className='bags'>
+                        <div className='bags-steps'>Krok 2/4</div>
+                        <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
+                        <label> Liczba 60 l worków:
+                        <select className='bags-input' name='bags' value={bags} onChange={this.handleChange}>
+                            <option defaultValue={bags}>-wybierz-</option>
+                            <option value="1-4">1-4</option>
+                            <option value="5-10">5-10</option>
+                            <option value="więcej niż 10">więcej niż 10</option>
+                        </select>
+                        </label>
 
-                    <div className='bugs-steps'>Krok 2/4</div>
-                    <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
-                    <div className='bugs-input'></div>
-                    <div className='bugs-buttons'>
-                        <button onClick={this.back}>Wstecz</button>
-                        <button onClick={this.continue}>Dalej</button>
-                    </div>
-                </section>
+                        <div className='bags-buttons'>
+                            <button onClick={this.back}>Wstecz</button>
+                            <button onClick={this.continue}>Dalej</button>
+                        </div>
+                    </section>
+                </div>
             </React.Fragment>
         )
     }

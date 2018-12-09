@@ -15,7 +15,7 @@ class MultipleStepForm extends React.Component {
         this.state = {
             step: 1,
             things: [],
-            bags: 0,
+            bags: '',
             location: '',
             whoToHelpTo: [],
             optionalOrganization: '',
@@ -42,23 +42,38 @@ class MultipleStepForm extends React.Component {
             step: step - 1
         });
     };
-    handleChange = input => e => {
+    handleChange = (name, e) => {
+        // console.log(name,e.target.value);
+        // console.log('gora input i e');
         this.setState({
-            [input]: e.target.value
+            [name]: e.target.value
+        },()=>{
+            console.log(this.state.bags,'ze state');
         })
     };
     handleThingsSelection = (thing) => {
         const things = this.state.things.slice();
+        console.log('przed ifem',thing);
+        console.log(things.includes(thing),'czy zawiera');
+
+        // usuwa co drugi raz cos ze state sie chrzani ??????????????
+
+
         if (things.includes(thing)) {
             const index = things.indexOf(thing);
-            things.splice(index, 1);
+            const deleted = things.splice(index, 1);
+            console.log('w ifie');
+            console.log(deleted);
+            console.log(things);
+            console.log('w ifie');
         } else {
             things.push(thing);
         }
+
         this.setState({
             things: things
         }, () => {
-            console.log(this.state.things);
+            console.log(this.state.things,'ze state things');
         })
     };
 

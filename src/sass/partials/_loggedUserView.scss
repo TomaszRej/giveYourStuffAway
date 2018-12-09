@@ -1,87 +1,94 @@
-#headerLogged-section{
-  header{
-    //position: fixed;
-    .login-section{
-      text-align:right;
-      margin:0.5rem;
-      span{
+#headerLogged-section {
+  #header {
+    // style dla sticky dodac po przeskrolowaniu myszka
+    //    box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
+    //    position: fixed;
+    //top:0;
+    //    background-color: $primaryBgColor;
+    //    z-index: 1;
+    //    width: 100%;
+    .login-section {
+      text-align: right;
+      margin: 0.5rem;
+      span {
         padding: 0.5rem;
         //background-color: $primaryBgColor;
         border: 1px solid transparent;
         // margin: 0.5rem;
-        &:hover{
+        &:hover {
           border: 1px solid $primaryColor;
         }
       }
-      span.greeting{
+      span.greeting {
         padding: 0.5rem;
-        &:hover{
+        &:hover {
           border: 1px solid transparent;
         }
       }
 
-      .fas.fa-cogs{
+      .fas.fa-cogs {
         position: relative;
         opacity: 0.7;
-        .preferences{
+        .preferences {
           background-color: $primaryBgColor;
           position: absolute;
           right: 20px;
           border: 1px solid $primaryTextColor;
           margin-top: 0.5rem;
-          li{
+          li {
             list-style: none;
             font-weight: normal;
             padding: 0.5rem 1rem;
-            a{
+            a {
               text-decoration: none;
               color: $primaryTextColor;
             }
-            &:hover{
+            &:hover {
               opacity: 0.6;
             }
           }
         }
-        &:hover{
+        &:hover {
           //transform: scale(1.2);
           opacity: 1;
           transition: 0.3s;
         }
       }
     }
-    nav{
-      .mobileMenu{
+    nav {
+
+      .mobileMenu {
 
         width: 100%;
         display: flex;
         justify-content: space-between;
-        box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
+        box-shadow: 0 0 1.5rem rgba(0, 0, 0, .2);
         padding: 1rem;
 
-        .fas.fa-tshirt{
+        .fas.fa-tshirt {
 
-          border:1px solid $primaryTextColor;
+          border: 1px solid $primaryTextColor;
           border-radius: 50%;
-          padding:0.5rem;
+          padding: 0.5rem;
         }
 
-        .fas.fa-bars,.fas.fa-times{
-          border:1px solid $primaryTextColor;
+        .fas.fa-bars, .fas.fa-times {
+          border: 1px solid $primaryTextColor;
           border-radius: 50%;
-          padding:0.5rem;
+          padding: 0.5rem;
 
-          &:hover{
-            box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
+          &:hover {
+            box-shadow: 0 0 1.5rem rgba(0, 0, 0, .2);
           }
         }
 
       }
-      ul{
+      ul {
         text-align: center;
-        margin-top:1rem;
-        li{
-          padding:0.2rem;
-          a{
+        margin-top: 1rem;
+        li {
+          padding: 0.2rem;
+          a {
             text-decoration: none;
             color: $primaryTextColor;
           }
@@ -90,10 +97,11 @@
       }
 
     }
-  }
-  .mainIdea{
 
-   margin: 3rem 0;
+  }
+  .mainIdea {
+
+    margin: 3rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,25 +113,25 @@
         display: block;
       }
     }
-    .header-decoration{
+    .header-decoration {
       background-image: url("./images/decoration.png");
       height: 33px;
       width: 253px;
       margin-top: 1rem;
       margin-bottom: 1rem;
     }
-    h3{
+    h3 {
       font-weight: normal;
       font-size: 1.5rem;
     }
 
   }
-  .steps{
+  .steps {
     margin-top: 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    .step{
+    .step {
       //display: block;
 
       display: flex;
@@ -137,19 +145,19 @@
       position: relative;
       margin-right: 1rem;
       margin-bottom: 2rem;
-      .step-number{
+      .step-number {
         transform: rotate(-45deg);
-        font-size:2rem;
+        font-size: 2rem;
         position: absolute;
-        top:3px;
+        top: 3px;
         left: 15px;
 
       }
-      .step-text{
+      .step-text {
         transform: rotate(-45deg);
         //width: 4rem;
         text-align: center;
-        span{
+        span {
           display: block;
         }
       }
@@ -159,11 +167,13 @@
 }
 
 @media only screen and (min-width: 401px) {
-  #headerLogged-section{
+  #headerLogged-section {
 
-    header{
-      nav{
-        ul{
+    header {
+
+      nav {
+
+        ul {
           li {
             border: 1px solid transparent;
             display: inline-block;
@@ -172,18 +182,19 @@
             a {
 
             }
-            &:hover{
+            &:hover {
               border: 1px solid $primaryTextColor;
             }
           }
         }
       }
     }
-    .mainIdea{
+    .mainIdea {
       margin-top: 1rem;
     }
   }
 }
+
 @media only screen and (min-width: 1100px) {
   #headerLogged-section {
     background-image: url("./images/header_logged_img.jpg");
@@ -193,15 +204,15 @@
     height: 580px;
     header {
       //height:25px;
-      .login-section{
+      .login-section {
         margin-right: 10rem;
       }
       nav {
         margin-left: 30rem;
       }
     }
-    .mainIdea{
-      h1{
+    .mainIdea {
+      h1 {
         margin-top: 1rem;
       }
       margin-top: 2rem;
@@ -210,6 +221,7 @@
 
   }
 }
+
 //@keyframes open {
 //  0%{
 //    height: 0;

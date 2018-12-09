@@ -29,6 +29,8 @@ class FirstPage extends React.Component {
     handleChange = (e) => {
         // filling things array in parent state
         const checkedBox = e.target.parentElement.innerText;
+        console.log(checkedBox, 'przed if powiino byc to samo ');
+
         const {handleThingsSelection} = this.props;
         if (typeof handleThingsSelection === 'function') {
             handleThingsSelection(checkedBox);
@@ -41,19 +43,22 @@ class FirstPage extends React.Component {
 
         this.setState({
             thingsToGive: updateThingsToGive
-        }, () => {
-            console.log(this.state.thingsToGive, 'ze state')
         })
 
     };
 
     renderCheckboxes = () => {
         const thingsToGive = ['ubrania, które nadają się do ponownego użycia', 'ubrania, do wyrzucenia', 'książki', 'zabawki', 'inne'];
+
         return thingsToGive.map((thing, i) => {
             return (
-                <label>
+                <label key={i} className='labelForCheckbox'>
                     <input type='checkbox' onChange={this.handleChange} name={thing}
                            value={this.state.thingsToGive[thing]}/>
+                    <span className='checkmark'>
+                        <i style={{display: this.state.thingsToGive[thing] === true ? 'block' : 'none'}}
+                           className="fas fa-check"/>
+                    </span>
                     {thing}
                 </label>
             )
@@ -65,35 +70,19 @@ class FirstPage extends React.Component {
         return (
             <React.Fragment>
                 <ImportantInfo text={this.state.info}/>
+                <div className='picture-container'>
                 <section className='firstPage'>
 
-                    <div className='firstPage-steps'>Krok 1/4</div>
-                    <h3>Zaznacz co chcesz oddac:</h3>
-                    <div className='firstPage-inputs'>
-                        {/*<label>*/}
-                        {/*<input type='checkbox' onChange={this.handleChange}/>*/}
-                        {/*ubrania, które nadają się do ponownego użycia*/}
-                        {/*</label>*/}
-                        {/*<label>*/}
-                        {/*<input type='checkbox' onChange={this.handleChange}/>*/}
-                        {/*ubrania, do wyrzucenia*/}
-                        {/*</label>*/}
-                        {/*<label>*/}
-                        {/*<input type='checkbox' onChange={this.handleChange}/>*/}
-                        {/*zabawki*/}
-                        {/*</label>*/}
-                        {/*<label>*/}
-                        {/*<input type='checkbox' onChange={this.handleChange}/>*/}
-                        {/*książki*/}
-                        {/*</label>*/}
-                        {/*<label>*/}
-                        {/*<input type='checkbox' onChange={this.handleChange}/>*/}
-                        {/*inne*/}
-                        {/*</label>*/}
-                        {this.renderCheckboxes()}
-                    </div>
-                    <button onClick={this.continue}>Dalej</button>
+
+                        <div className='firstPage-steps'>Krok 1/4</div>
+                        <h3>Zaznacz co chcesz oddać:</h3>
+                        <div className='firstPage-inputs'>
+                            {this.renderCheckboxes()}
+                            <button onClick={this.continue}>Dalej</button>
+                        </div>
+
                 </section>
+                </div>
             </React.Fragment>
         )
             ;

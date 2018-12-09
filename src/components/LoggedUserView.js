@@ -67,7 +67,7 @@ class LoggedUserView extends React.Component {
         return (
 
             <section id='headerLogged-section'>
-                <header>
+                <header id='header'>
                     <div className='login-section'>
                         <span className='greeting'>Witaj {globalUserName}</span>
                         <i onClick={this.handleGearClick} style={{opacity: isPreferencesOpen ? '1' : '0.7'}}

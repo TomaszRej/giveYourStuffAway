@@ -46,7 +46,7 @@ class Footer extends React.Component {
             <section id='footer-section'>
                 <div className='footer-image'/>
                 <div className='footer-content'>
-                    <header>
+                    <header className='header'>
                         <h3>Skontaktuj się z nam</h3>
                         <div className='footer-decoration'/>
                     </header>

@@ -8,47 +8,136 @@ button {
 
   background-color: $primaryBgColor;
   border: 1px solid $primaryTextColor;
-  span{
+  span {
     display: block;
   }
-  &:hover{
+  &:hover {
     // background-color: $secondaryBgColor;
     // color: $secondaryBgColor;
     border-bottom: 1px solid black;
-    box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, .2);
   }
 
-  &:focus{
+  &:focus {
     border: 1px solid $primaryColor;
     color: $primaryColor;
   }
 
-
 }
+
 // button for all pages
-.firstPage{
+.firstPage {
   display: flex;
-flex-direction: column;
-  align-items: center;
-  .firstPage-steps{
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80vw;
+  margin: 0 auto;
+  //padding: 1rem auto;
+  .firstPage-steps {
+    margin: 1rem 0;
 
   }
-  h3{
-
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
   }
-  .firstPage-inputs{
-    label{
+  .firstPage-inputs {
+    margin: 0 auto;
+    width: 80vw;
+    button {
+      margin-left: 0;
+      margin-bottom: 1rem;
+    }
+
+    .labelForCheckbox {
       display: block;
+      position: relative;
+      cursor: pointer;
+      padding-left: 40px;
+      margin-bottom: 12px;
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 30px;
+        width: 30px;
+        border: 1px solid $primaryTextColor;
+        background-color: $primaryBgColor;
+        i {
+          padding: 7px;
+        }
+        &:after {
+
+        }
+      }
 
     }
   }
-  button{
-
-  }
 }
 
-.bugs{
+.bags {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  width: 80vw;
+  margin: 0 auto;
+  .bags-steps{
+    margin-top: 1rem;
+  }
+  h3{
+    margin-top: 4rem;
+  }
+  label{
+    margin-top:2rem;
+    padding-right: 1rem;
+      position:relative;
+
+      &:after {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        top: 25px;
+        right: 35px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid rgba(0, 0, 0, .5);
+        transition: all .2s cubic-bezier(.25, .46, .45, .94);
+        z-index: 9;
+      }
+
+
+    .bags-input {
+      margin: 10px;
+      padding: 10px 23px;
+      border-radius: 0;
+
+    }
+  }
+  .bags-buttons{
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    button {
+      margin-left: 0;
+    }
+  }
+
+}
+
+@media screen and (min-width: 700px) {
+  .picture-container {
+    background-image: url("./images/teddy.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
 }

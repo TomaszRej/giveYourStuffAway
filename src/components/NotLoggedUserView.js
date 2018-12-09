@@ -21,16 +21,37 @@ class NotLoggedUserView extends Component {
         super(props);
 
         this.state = {
+            transform: 0,
             data: null
         }
 
     }
     componentDidMount(){
+        window.addEventListener('scroll', this.handleScroll);
         //passing to state imported db.json
         this.setState({
             data: db
         })
     }
+
+
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = (event) =>{
+
+        // let scrollTop = event.srcElement.body.scrollHeight,
+        //     itemTranslate = Math.min(0, scrollTop/3 - 60);
+        console.log(window.scrollY);
+        const transform = window.scrollY;
+
+        this.setState({
+            transform: transform
+        },()=>{console.log(this.state.transform,'transform')});
+    };
+
     render() {
         return (
             <div>
