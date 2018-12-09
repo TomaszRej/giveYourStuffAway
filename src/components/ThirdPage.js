@@ -26,11 +26,24 @@ class ThirdPage extends React.Component {
     };
 
     render() {
+        const { location , whoToHelpTo, optionalOrganization } = this.props;
         return (
             <React.Fragment>
                 <ImportantInfo text={this.state.info}/>
                 <section className='thirdPage'>
                     <div className='thirdPage-steps'>Krok 3/4</div>
+                    <label> Lokalizacja:
+                        <select className='location-input' name='location' value={location} onChange={this.handleChange}>
+                            <option >-wybierz-</option>
+                            <option value="Częstochowa">Częstochowa</option>
+                            <option value="Katowice">Katowice</option>
+                            <option value="Kraków">Kraków</option>
+                            <option value="Warszawa">Warszawa</option>
+                            <option value="Wrocław">Wrocław</option>
+                            <option value="Zakopane">Zakopane</option>
+                        </select>
+                    </label>
+
                     <div className='thirdPage-buttons'>
                         <button onClick={this.back}>Wstecz</button>
                         <button onClick={this.continue}>Szukaj</button>

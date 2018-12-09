@@ -73,12 +73,13 @@ class MultipleStepForm extends React.Component {
         this.setState({
             things: things
         }, () => {
-            console.log(this.state.things,'ze state things');
+            console.log(this.state.things,'ze state things[]!!!!!');
         })
     };
 
     render() {
-        const {step, bugs} = this.state;
+        const {step, bags, location, whoToHelpTo, optionalOrganization} = this.state;
+        const valuesForThirdPage = { location, whoToHelpTo, optionalOrganization };
         switch (step) {
             case 1:
                 return (
@@ -93,7 +94,7 @@ class MultipleStepForm extends React.Component {
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
                         handleChange={this.handleChange}
-                        value={bugs}
+                        value={bags}
                     />
                 );
             case 3:
@@ -101,7 +102,9 @@ class MultipleStepForm extends React.Component {
                     <ThirdPage
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
-                        handleChange={this.handleChange}/>
+                        handleChange={this.handleChange}
+                        values={valuesForThirdPage}
+                    />
                 );
             case 4:
                 return (

@@ -7,9 +7,9 @@ class Header extends React.Component {
         super(props);
 
         this.state = {
+            elementClicked: '1',
             isMobileView: '',
             isMenuVisible: ''
-
         }
     }
 
@@ -43,6 +43,12 @@ console.log('mobile');
             }
         });
     };
+    handleClickOnList = (e) =>{
+        const clicked = e.currentTarget.dataset.id;
+        this.setState({
+            elementClicked: clicked,
+        },()=>{console.log(this.state.elementClicked)})
+    };
 
     handleHamburgerClick = () => {
       this.setState({
@@ -66,11 +72,16 @@ console.log('mobile');
                         <div style={{display: isMobileView ? 'flex' : 'none'}} className='mobileMenu'><i className="fas fa-tshirt"/> {hamburgerIcon}
                         </div>
                         <ul style={{display: isMenuVisible ? 'block' : 'none'}} className={isMenuVisible ? 'openMenu':'closeMenu'}>
-                            <li><HashLink to='#header-section'>Start</HashLink></li>
-                            <li><HashLink to='#fourEasySteps-section'>O co chodzi?</HashLink></li>
-                            <li><HashLink to='#about-section'>O nas</HashLink></li>
-                            <li><HashLink to='#foundationsList-section'>Fundacje i organizacje</HashLink></li>
-                            <li><HashLink to='#footer-section'>Kontakt</HashLink></li>
+                            <li data-id="1" className={this.state.elementClicked == 1 ? 'active' : null}
+                                onClick={this.handleClickOnList}><HashLink to='#header-section'>Start</HashLink></li>
+                            <li data-id="2" className={this.state.elementClicked == 2 ? 'active' : null}
+                                onClick={this.handleClickOnList}><HashLink to='#fourEasySteps-section'>O co chodzi?</HashLink></li>
+                            <li data-id="3" className={this.state.elementClicked == 3 ? 'active' : null}
+                                onClick={this.handleClickOnList}><HashLink to='#about-section'>O nas</HashLink></li>
+                            <li data-id="4" className={this.state.elementClicked == 4 ? 'active' : null}
+                                onClick={this.handleClickOnList}><HashLink to='#foundationsList-section'>Fundacje i organizacje</HashLink></li>
+                            <li data-id="5" className={this.state.elementClicked == 5 ? 'active' : null}
+                                onClick={this.handleClickOnList}><HashLink to='#footer-section'>Kontakt</HashLink></li>
                         </ul>
 
                     </nav>

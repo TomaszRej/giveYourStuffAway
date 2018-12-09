@@ -72,8 +72,6 @@ class FirstPage extends React.Component {
                 <ImportantInfo text={this.state.info}/>
                 <div className='picture-container'>
                 <section className='firstPage'>
-
-
                         <div className='firstPage-steps'>Krok 1/4</div>
                         <h3>Zaznacz co chcesz oddać:</h3>
                         <div className='firstPage-inputs'>

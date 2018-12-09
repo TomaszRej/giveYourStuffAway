@@ -42,14 +42,12 @@ class NotLoggedUserView extends Component {
 
     handleScroll = (event) =>{
 
-        // let scrollTop = event.srcElement.body.scrollHeight,
-        //     itemTranslate = Math.min(0, scrollTop/3 - 60);
-        console.log(window.scrollY);
+        //console.log(window.scrollY);
         const transform = window.scrollY;
 
         this.setState({
             transform: transform
-        },()=>{console.log(this.state.transform,'transform')});
+        });
     };
 
     render() {

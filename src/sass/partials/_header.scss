@@ -62,6 +62,9 @@
       //position: fixed;
       //background-color: $primaryBgColor;
       //z-index: 1;
+      .active{
+        border: 1px solid $primaryTextColor;
+      }
       .mobileMenu{
 
         width: 100%;

@@ -44,7 +44,7 @@ class SecondPage extends React.Component {
                         <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
                         <label> Liczba 60 l worków:
                         <select className='bags-input' name='bags' value={bags} onChange={this.handleChange}>
-                            <option defaultValue={bags}>-wybierz-</option>
+                            <option >-wybierz-</option>
                             <option value="1-4">1-4</option>
                             <option value="5-10">5-10</option>
                             <option value="więcej niż 10">więcej niż 10</option>
