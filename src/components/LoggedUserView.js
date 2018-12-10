@@ -135,24 +135,6 @@ class LoggedUserView extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/*<div className='steps'>*/}
-                    {/*<div className='step'>*/}
-                        {/*<div className='step-number'>1</div>*/}
-                        {/*<div className='step-text'><span>Wybierz </span><span>rzeczy</span></div>*/}
-                    {/*</div>*/}
-                    {/*<div className='step'>*/}
-                        {/*<div className='step-number'>1</div>*/}
-                        {/*<div className='step-text'><span>Wybierz </span><span>rzeczy</span></div>*/}
-                    {/*</div>*/}
-                    {/*<div className='step'>*/}
-                        {/*<div className='step-number'>1</div>*/}
-                        {/*<div className='step-text'><span>Wybierz </span><span>rzeczy</span></div>*/}
-                    {/*</div>*/}
-                    {/*<div className='step'>*/}
-                        {/*<div className='step-number'>1</div>*/}
-                        {/*<div className='step-text'><span>Wybierz </span><span>rzeczy</span></div>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
                 <MultiStepForm/>
                 <Footer/>
             </section>);

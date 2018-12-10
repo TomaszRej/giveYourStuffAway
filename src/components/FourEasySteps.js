@@ -1,6 +1,7 @@
 import React from 'react';
 
 const FourEasySteps = () => {
+
     return (
         <section id='fourEasySteps-section'>
             <header>Wystarczą 4 proste kroki</header>

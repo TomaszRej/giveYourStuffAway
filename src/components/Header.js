@@ -81,16 +81,16 @@ class Header extends React.Component {
                             <li data-id="1" className={transform < 620 ? 'active' : null}
                             ><HashLink to='#header-section'>Start</HashLink></li>
                             <li data-id="2"
-                                className={transform >= 620 && transform < 920 ? 'active' : null}>
+                                className={transform >= 620 && transform < 1320 ? 'active' : null}>
                                 <HashLink to='#fourEasySteps-section'>O co chodzi?</HashLink>
                             </li>
                             <li data-id="3"
-                                className={transform >= 1320 && transform < 1700 ? 'active' : null}
+                                className={transform >= 1320 && transform < 2378 ? 'active' : null}
                             ><HashLink to='#about-section'>O nas</HashLink></li>
                             <li data-id="4"
-                                className={transform >= 1700 && transform < 3000 ? 'active' : null}
+                                className={transform >= 2378 && transform < 2900 ? 'active' : null}
                             ><HashLink to='#foundationsList-section'>Fundacje i organizacje</HashLink></li>
-                            <li data-id="5" className={transform > 3000 ? 'active' : null}
+                            <li data-id="5" className={transform > 2900 ? 'active' : null}
                             ><HashLink to='#footer-section'>Kontakt</HashLink></li>
                         </ul>
 

@@ -40,10 +40,10 @@ class NotLoggedUserView extends Component {
         window.removeEventListener('scroll', this.handleScroll);
     }
 
-    handleScroll = (event) =>{
-
-        //console.log(window.scrollY);
+    handleScroll = () =>{
         const transform = window.scrollY;
+        //const transform = window.pageYOffset;
+
 
         this.setState({
             transform: transform
