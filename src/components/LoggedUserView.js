@@ -8,6 +8,7 @@ class LoggedUserView extends React.Component {
         super(props);
 
         this.state = {
+            transform: 0,
             isMobileView: '',
             isMenuVisible: '',
             isPreferencesOpen: false,
@@ -17,6 +18,7 @@ class LoggedUserView extends React.Component {
 
     componentDidMount() {
         console.log('komponenet');
+        window.addEventListener('scroll', this.handleScroll);
         const mobile = window.matchMedia("screen and (max-width: 400px)");
         if (mobile.matches) {
             this.setState({
@@ -45,6 +47,17 @@ class LoggedUserView extends React.Component {
             }
         });
     };
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () =>{
+        const transform = window.scrollY;
+
+        this.setState({
+            transform: transform
+        });
+    };
 
     handleHamburgerClick = () => {
         this.setState({
@@ -59,15 +72,16 @@ class LoggedUserView extends React.Component {
 
 
     render() {
-        const {isMobileView, isMenuVisible, isPreferencesOpen} = this.state;
+        const {isMobileView, isMenuVisible, isPreferencesOpen, transform} = this.state;
         const {globalUserName} = this.props;
+
 
         const hamburgerIcon = isMenuVisible ? <i onClick={this.handleHamburgerClick} className="fas fa-times"/> :
             <i onClick={this.handleHamburgerClick} className="fas fa-bars"/>;
         return (
 
             <section id='headerLogged-section'>
-                <header id='header'>
+                <header id='header' style={transform >= 100 ? navStyle : null}>
                     <div className='login-section'>
                         <span className='greeting'>Witaj {globalUserName}</span>
                         <i onClick={this.handleGearClick} style={{opacity: isPreferencesOpen ? '1' : '0.7'}}
@@ -144,6 +158,14 @@ class LoggedUserView extends React.Component {
             </section>);
     }
 
+}
+const navStyle = {
+    boxShadow: '0 0 1.5rem rgba(0,0,0,.2)',
+    position: 'fixed',
+    top: 0,
+    backgroundColor: 'white',
+    zIndex: 1,
+    width: '100%'
 };
 
 export default LoggedUserView;

@@ -51,9 +51,10 @@ class NotLoggedUserView extends Component {
     };
 
     render() {
+
         return (
             <div>
-                <Header/>
+                <Header transform={this.state.transform}/>
                 <Info/>
                 <FourEasySteps/>
                 <About/>
