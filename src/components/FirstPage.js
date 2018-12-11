@@ -27,23 +27,28 @@ class FirstPage extends React.Component {
         }
     };
     handleChange = (e) => {
-        // filling things array in parent state
-        const checkedBox = e.target.parentElement.innerText;
-        console.log(checkedBox, 'przed if powiino byc to samo ');
-
-        const {handleThingsSelection} = this.props;
-        if (typeof handleThingsSelection === 'function') {
-            handleThingsSelection(checkedBox);
-        }
-
         //update local state
         const val = e.target.checked;
         const name = e.target.name;
         let updateThingsToGive = Object.assign({}, this.state.thingsToGive, {[name]: val});
 
+
+        const checkedBox = e.target.parentElement.innerText;
+        console.log(checkedBox, 'przed if powiino byc to samo ');
+
+        const {handleThingsSelection} = this.props;
         this.setState({
             thingsToGive: updateThingsToGive
-        })
+        },()=>{
+            // filling things array in parent state
+
+            if (typeof handleThingsSelection === 'function') {
+                handleThingsSelection(this.state.thingsToGive);
+            }
+        });
+
+
+
 
     };
 

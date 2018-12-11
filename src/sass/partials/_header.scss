@@ -17,6 +17,10 @@
           //background-color: $primaryBgColor;
           border: 1px solid transparent;
          // margin: 0.5rem;
+          a{
+            color: $primaryTextColor;
+            text-decoration: none;
+          }
           &:hover{
             border: 1px solid $primaryColor;
           }

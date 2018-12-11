@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import MultiStepForm from './MultipleStepForm';
 import Footer from './Footer';
 import {Link} from "react-router-dom";
+import { connect } from 'react-redux';
 
 class LoggedUserView extends React.Component {
     constructor(props) {
@@ -83,7 +84,7 @@ class LoggedUserView extends React.Component {
             <section id='headerLogged-section'>
                 <header id='header' style={transform >= 100 ? navStyle : null}>
                     <div className='login-section'>
-                        <span className='greeting'>Witaj {globalUserName}</span>
+                        <span className='greeting'>Witaj {this.props.globalName}</span>
                         <i onClick={this.handleGearClick} style={{opacity: isPreferencesOpen ? '1' : '0.7'}}
                            className="fas fa-cogs">
                             <ul style={{display: isPreferencesOpen ? 'block' : 'none'}} className='preferences'>
@@ -150,4 +151,12 @@ const navStyle = {
     width: '100%'
 };
 
-export default LoggedUserView;
+const mapStateToProps = state => {
+  return {
+      globalName: state.nameInRedux
+  }
+};
+
+
+
+export default connect(mapStateToProps)(LoggedUserView);

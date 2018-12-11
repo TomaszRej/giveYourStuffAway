@@ -7,6 +7,7 @@ class ThirdPage extends React.Component {
 
         this.state = {
             info: 'Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądż celu ich pomocy.',
+
         }
     }
 
@@ -23,6 +24,13 @@ class ThirdPage extends React.Component {
         if (typeof prevStep === 'function') {
             prevStep();
         }
+    };
+    handleListItemClick = (e) => {
+    // zrobic to statem
+            e.target.classList.add('active');
+
+
+      //console.log(e.target.classList.add('active'));
     };
 
     render() {
@@ -45,16 +53,16 @@ class ThirdPage extends React.Component {
                                 <option value="Zakopane">Zakopane</option>
                             </select>
                         </label>
-                        <div>
-                            <div>
+                        <div className='whoToHelpTo'>
+                            <h5>
                                 Komu chcesz pomóc?
-                            </div>
+                            </h5>
                             <ul>
-                                <li>dzieciom</li>
-                                <li>samotnym matkom</li>
-                                <li>bezdomnym</li>
-                                <li>niepełnosprawnym</li>
-                                <li>osobom starszym</li>
+                                <li onClick={this.handleListItemClick}>dzieciom</li>
+                                <li onClick={this.handleListItemClick}>samotnym matkom</li>
+                                <li onClick={this.handleListItemClick}>bezdomnym</li>
+                                <li onClick={this.handleListItemClick}>niepełnosprawnym</li>
+                                <li onClick={this.handleListItemClick}>osobom starszym</li>
                             </ul>
                         </div>
                         <div className='optionalOrganizationName'>

@@ -16,6 +16,7 @@ import {
 
 import NotLoggedUserView from './NotLoggedUserView';
 import LoggedUserView from './LoggedUserView';
+import Login from "./Login";
 
 
 class App extends Component {
@@ -37,8 +38,11 @@ class App extends Component {
             <HashRouter>
                 <Fragment>
                     <Switch>
+
+
                         <Route exact path='/' component={NotLoggedUserView}/>
 
+                        <Route exact path='/login' component={Login} />
                         <Route exact path='/logged'
                                render={(props) => <LoggedUserView  {...props} globalUserName={this.state.globalUserName}/>}/>
                     </Switch>

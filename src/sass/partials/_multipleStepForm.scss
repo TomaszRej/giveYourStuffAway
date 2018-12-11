@@ -131,6 +131,76 @@ button {
 
 }
 
+.thirdPage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80vw;
+  margin: 0 auto;
+  .thirdPAge-steps{
+    margin-top: 1rem;
+  }
+  h3{
+    margin-top: 4rem;
+  }
+  label{
+    margin-top:2rem;
+    padding-right: 0.5rem;
+    position:relative;
+
+    &:after {
+
+      content: "";
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 8px solid rgba(0, 0, 0, .5);
+
+    }
+
+
+    .location-input {
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 0;
+
+
+    }
+  }
+  .whoToHelpTo{
+    h5{
+
+    }
+    ul{
+      width:500px;
+      .active{
+        background-color: $primaryColor;
+      }
+      li{
+        list-style: none;
+        border: 1px solid $primaryTextColor;
+        padding:0.5rem;
+        margin:0.5rem;
+        display: inline-block;
+      }
+    }
+  }
+
+
+  .thirdPage-buttons{
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    button {
+      margin-left: 0;
+    }
+  }
+
+}
+
 
 @media screen and (min-width: 700px) {
   .picture-container {

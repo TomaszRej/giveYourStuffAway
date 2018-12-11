@@ -69,7 +69,7 @@ class Header extends React.Component {
             <section id='header-section'>
                 <header style={transform >= 100 ? navStyle : null}>
                     <div className='login-section'>
-                        <span>Zaloguj</span>
+                        <span><Link to={'login'}>Zaloguj</Link></span>
                         <span>Załóż konto</span>
                     </div>
                     <nav>
