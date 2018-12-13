@@ -38,8 +38,6 @@ class App extends Component {
             <HashRouter>
                 <Fragment>
                     <Switch>
-
-
                         <Route exact path='/' component={NotLoggedUserView}/>
 
                         <Route exact path='/login' component={Login} />

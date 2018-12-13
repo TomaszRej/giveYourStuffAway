@@ -84,7 +84,7 @@ class MultipleStepForm extends React.Component {
     };
 
     render() {
-        const {step, bags, location, whoToHelpTo, optionalOrganization} = this.state;
+        const {step, things, bags, location, whoToHelpTo, optionalOrganization} = this.state;
         const valuesForThirdPage = { location, whoToHelpTo, optionalOrganization };
         switch (step) {
             case 1:
@@ -92,6 +92,8 @@ class MultipleStepForm extends React.Component {
                     <FirstPage
                         nextStep={this.nextStep}
                         handleThingsSelection={this.handleThingsSelection}
+                        value={things}
+
                     />
                 );
             case 2:

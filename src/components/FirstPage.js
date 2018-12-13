@@ -61,7 +61,9 @@ class FirstPage extends React.Component {
                     <input type='checkbox' onChange={this.handleChange} name={thing}
                            value={this.state.thingsToGive[thing]}/>
                     <span className='checkmark'>
-                        <i style={{display: this.state.thingsToGive[thing] === true ? 'block' : 'none'}}
+                        {/* <i style={{display: this.state.thingsToGive[thing] === true ? 'block' : 'none'}}
+                           className="fas fa-check"/> */}
+                           <i style={{display: this.props.value.includes(thing) ? 'block' : 'none'}}
                            className="fas fa-check"/>
                     </span>
                     {thing}

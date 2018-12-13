@@ -34,7 +34,7 @@ class SecondPage extends React.Component {
     };
 
     render() {
-        const {bags} = this.props;
+        const {value} = this.props;
         return (
             <React.Fragment>
                 <ImportantInfo text={this.state.info}/>
@@ -43,8 +43,8 @@ class SecondPage extends React.Component {
                         <div className='bags-steps'>Krok 2/4</div>
                         <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
                         <label> Liczba 60 l worków:
-                        <select className='bags-input' name='bags' value={bags} onChange={this.handleChange} >
-                            <option>-wybierz-</option>
+                        <select className='bags-input' name='bags' value={value} onChange={this.handleChange} >
+                            <option value='wybierz'>-wybierz-</option>
                             <option value="1-4">1-4</option>
                             <option value="5-10">5-10</option>
                             <option value="więcej niż 10">więcej niż 10</option>
