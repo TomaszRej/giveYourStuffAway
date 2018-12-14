@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {HashLink} from 'react-router-hash-link';
+import {connect} from 'react-redux';
+import Nav from './Nav';
 
 class Header extends React.Component {
     constructor(props) {
@@ -63,8 +65,20 @@ class Header extends React.Component {
         console.log(transform, 'transform w header !!');
 
 
-        const hamburgerIcon = isMenuVisible ? <i onClick={this.handleHamburgerClick} className="fas fa-times"/> :
-            <i onClick={this.handleHamburgerClick} className="fas fa-bars"/>;
+        // const hamburgerIcon = isMenuVisible ? <i onClick={this.handleHamburgerClick} className="fas fa-times"/> :
+        //     <i onClick={this.handleHamburgerClick} className="fas fa-bars"/>;
+
+        let link;
+        if (this.props.globalUserName) {
+            link = <Link to={'logged'}>
+                <button><span>Oddaj</span> <span>rzeczy</span></button>
+            </Link>;
+        } else {
+            link = <Link to={'login'}>
+                <button><span>Oddaj</span> <span>rzeczy</span></button>
+            </Link>;
+
+        }
         return (
             <section id='header-section'>
                 <header style={transform >= 100 ? navStyle : null}>
@@ -72,29 +86,33 @@ class Header extends React.Component {
                         <span><Link to={'login'}>Zaloguj</Link></span>
                         <span>Załóż konto</span>
                     </div>
-                    <nav>
-                        <div style={{display: isMobileView ? 'flex' : 'none'}} className='mobileMenu'><i
-                            className="fas fa-tshirt"/> {hamburgerIcon}
-                        </div>
-                        <ul style={{display: isMenuVisible ? 'block' : 'none'}}
-                            className={isMenuVisible ? 'openMenu' : 'closeMenu'}>
-                            <li data-id="1" className={transform < 620 ? 'active' : null}
-                            ><HashLink to='#header-section'>Start</HashLink></li>
-                            <li data-id="2"
-                                className={transform >= 620 && transform < 1320 ? 'active' : null}>
-                                <HashLink to='#fourEasySteps-section'>O co chodzi?</HashLink>
-                            </li>
-                            <li data-id="3"
-                                className={transform >= 1320 && transform < 2378 ? 'active' : null}
-                            ><HashLink to='#about-section'>O nas</HashLink></li>
-                            <li data-id="4"
-                                className={transform >= 2378 && transform < 2900 ? 'active' : null}
-                            ><HashLink to='#foundationsList-section'>Fundacje i organizacje</HashLink></li>
-                            <li data-id="5" className={transform > 2900 ? 'active' : null}
-                            ><HashLink to='#footer-section'>Kontakt</HashLink></li>
-                        </ul>
+                    <Nav isMobileView={isMobileView}
+                         isMenuVisible={isMenuVisible}
+                         transform={transform}
+                    />
+                    {/*<nav>*/}
+                        {/*<div style={{display: isMobileView ? 'flex' : 'none'}} className='mobileMenu'><i*/}
+                            {/*className="fas fa-tshirt"/> {hamburgerIcon}*/}
+                        {/*</div>*/}
+                        {/*<ul style={{display: isMenuVisible ? 'block' : 'none'}}*/}
+                            {/*className={isMenuVisible ? 'openMenu' : 'closeMenu'}>*/}
+                            {/*<li data-id="1" className={transform < 620 ? 'active' : null}*/}
+                            {/*><HashLink to='#header-section'>Start</HashLink></li>*/}
+                            {/*<li data-id="2"*/}
+                                {/*className={transform >= 620 && transform < 1320 ? 'active' : null}>*/}
+                                {/*<HashLink to='#fourEasySteps-section'>O co chodzi?</HashLink>*/}
+                            {/*</li>*/}
+                            {/*<li data-id="3"*/}
+                                {/*className={transform >= 1320 && transform < 2378 ? 'active' : null}*/}
+                            {/*><HashLink to='#about-section'>O nas</HashLink></li>*/}
+                            {/*<li data-id="4"*/}
+                                {/*className={transform >= 2378 && transform < 2900 ? 'active' : null}*/}
+                            {/*><HashLink to='#foundationsList-section'>Fundacje i organizacje</HashLink></li>*/}
+                            {/*<li data-id="5" className={transform > 2900 ? 'active' : null}*/}
+                            {/*><HashLink to='#footer-section'>Kontakt</HashLink></li>*/}
+                        {/*</ul>*/}
 
-                    </nav>
+                    {/*</nav>*/}
                 </header>
                 <div className='mainIdea'>
                     <h1>
@@ -104,9 +122,7 @@ class Header extends React.Component {
                     <div className='header-decoration'/>
                     <div className='mainButtons'>
                         {/*<button><span>Oddaj</span> <span>rzeczy</span></button>*/}
-                        <Link to={'logged'}>
-                            <button><span>Oddaj</span> <span>rzeczy</span></button>
-                        </Link>
+                        {link}
                         <button><span>Zorganizuj</span> <span>zbiórkę</span>
                         </button>
                     </div>
@@ -115,4 +131,12 @@ class Header extends React.Component {
     }
 };
 
-export default Header;
+const mapStateToProps = state => {
+    return {
+        globalUserName: state.globalName
+    }
+};
+
+
+
+export default connect(mapStateToProps)(Header);

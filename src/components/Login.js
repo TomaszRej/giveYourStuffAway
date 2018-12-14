@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header';
+import Nav from './Header';
 import { connect }  from 'react-redux';
 
 
@@ -21,13 +21,14 @@ class Login extends React.Component {
 
     render() {
         return (
-            <section>
-                <Header/>
-                <form onSubmit={(name) => this.props.setUserName(this.state.userName)}>
+         <React.Fragment>
+                <Nav/>
+                {/* <form onSubmit={() => this.props.setUserName(this.state.userName)}>
                     <input type='text' value={this.state.userName} onChange={this.handleNameChange}/>
                     <button type='submit'>Zaloguj się</button>
-                </form>
-            </section>
+                </form> */}
+       
+           </React.Fragment>
         )
     }
 }

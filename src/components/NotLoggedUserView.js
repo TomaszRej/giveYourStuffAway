@@ -6,13 +6,13 @@ import {
     Switch,
     NavLink
 } from 'react-router-dom';
-import db from '../db.json'
 import Header from './Header';
 import Info from './Info';
 import FourEasySteps from './FourEasySteps';
 import About from './About';
 import FundationsList from './FundationsList';
 import Footer from './Footer';
+import { connect } from 'react-redux';
 
 
 
@@ -22,16 +22,11 @@ class NotLoggedUserView extends Component {
 
         this.state = {
             transform: 0,
-            data: null
         }
 
     }
     componentDidMount(){
         window.addEventListener('scroll', this.handleScroll);
-        //passing to state imported db.json
-        this.setState({
-            data: db
-        })
     }
 
 
@@ -42,8 +37,6 @@ class NotLoggedUserView extends Component {
 
     handleScroll = () =>{
         const transform = window.scrollY;
-        //const transform = window.pageYOffset;
-
 
         this.setState({
             transform: transform
@@ -58,11 +51,17 @@ class NotLoggedUserView extends Component {
                 <Info/>
                 <FourEasySteps/>
                 <About/>
-                <FundationsList data={this.state.data}/>
+                <FundationsList data={this.props.data}/>
                 <Footer/>
             </div>
         );
     }
 }
 
-export default NotLoggedUserView;
+const mapStateToProps = state => {
+    return {
+        data: state.data
+    }
+};
+
+export default connect(mapStateToProps)(NotLoggedUserView);

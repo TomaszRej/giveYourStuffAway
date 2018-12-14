@@ -53,13 +53,35 @@ class MultipleStepForm extends React.Component {
     };
     handleThingsSelection = (thing) => {
         //const things = this.state.things.slice();
-        const newThings = [];
-        for(const el in thing){
-            console.log(el,'element');
-            if(thing[el] === true) {
-                newThings.push(el);
+        const newThings = this.state.things.slice();
+
+            for (const el in thing) {
+                console.log(el, 'element');
+
+                if (thing[el] === true) {
+                    if(!newThings.indexOf(thing[el])>=-1) {
+                        newThings.push(el);
+                        console.log('nie ma');
+                    }else{
+                        console.log('ma');
+                    }
+                }
             }
-        }
+            this.setState({
+                things: newThings
+            }, () => {
+                console.log(this.state.things,'ze state things[]!!!!!');
+            })
+     //else
+            // const newArray = newThings.filter(el => el !== thing);
+            // console.log(newArray,'newARrray');
+            //
+            // this.setState({
+            //     things: newArray
+            // }, () => {
+            //     console.log(this.state.things,'ze state things[]!!!!!');
+            // })
+       // }
 
 
         // console.log('przed ifem',thing);
@@ -76,11 +98,7 @@ class MultipleStepForm extends React.Component {
         //     things.push(thing);
         // }
 
-        this.setState({
-            things: newThings
-        }, () => {
-            console.log(this.state.things,'ze state things[]!!!!!');
-        })
+
     };
 
     render() {

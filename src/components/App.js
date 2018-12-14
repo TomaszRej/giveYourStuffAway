@@ -38,12 +38,15 @@ class App extends Component {
             <HashRouter>
                 <Fragment>
                     <Switch>
-                        <Route exact path='/' component={NotLoggedUserView}/>
+
 
                         <Route exact path='/login' component={Login} />
                         <Route exact path='/logged'
+                    
                                render={(props) => <LoggedUserView  {...props} globalUserName={this.state.globalUserName}/>}/>
+                               <Route exact path='/' component={NotLoggedUserView}/>
                     </Switch>
+
                 </Fragment>
             </HashRouter>
         );
